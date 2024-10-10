@@ -1,0 +1,19 @@
+import java.util.Scanner
+
+public class InvertirFrase {
+
+    public static void String invertir(String frase) {
+        if (frase.isEmpty()) {
+            return frase;
+        }
+
+        return invertir(frase.substring(1)) + frase.charAt(0);
+    }
+
+    public static void main(String[] args) {
+        String frase = "Hola Mundo";
+        String invertida = invertir(frase);
+        System.out.println("Frase original: " + frase);
+        System.out.println("Frase invertida: " + invertida);
+    }
+}

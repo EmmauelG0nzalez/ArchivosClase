@@ -1,0 +1,15 @@
+public class InvertirNumero {
+
+    public static int invertirNumero(int numero, int invertido) {
+        if (numero == 0) {
+            return invertido;
+        }
+        return invertirNumero(numero / 10, invertido * 10 + (numero % 10));
+    }
+
+    public static void main(String[] args) {
+        int numero = 12345;
+        int invertido = invertirNumero(numero, 0);
+        System.out.println("El número invertido de " + numero + " es: " + invertido);
+    }
+}

@@ -1,0 +1,35 @@
+public class Palindromo {
+
+    
+    public static String limpiarFrase(String frase) {
+        return frase.replaceAll("[^a-zA-Z]", "").toLowerCase(); 
+    }
+
+    
+    public static boolean esPalindromo(String frase, int inicio, int fin) {
+       
+        if (inicio >= fin) {
+            return true;
+        }
+        
+        if (frase.charAt(inicio) != frase.charAt(fin)) {
+            return false;
+        }
+        
+        return esPalindromo(frase, inicio + 1, fin - 1);
+    }
+
+    public static void main(String[] args) {
+        String frase = "Anita lava la tina"; 
+
+        String fraseLimpia = limpiarFrase(frase);
+        
+        boolean resultado = esPalindromo(fraseLimpia, 0, fraseLimpia.length() - 1);
+        
+        if (resultado) {
+            System.out.println("La frase es palíndroma.");
+        } else {
+            System.out.println("La frase no es palíndroma.");
+        }
+    }
+}
